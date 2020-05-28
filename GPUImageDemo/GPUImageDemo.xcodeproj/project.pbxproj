@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		923C275D247FED3500E1121F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923C275C247FED3500E1121F /* Assets.xcassets */; };
 		923C2760247FED3500E1121F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923C275E247FED3500E1121F /* LaunchScreen.storyboard */; };
 		923C2763247FED3500E1121F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C2762247FED3500E1121F /* main.m */; };
+		923C276C247FEFEC00E1121F /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C276B247FEFEC00E1121F /* AlbumViewController.m */; };
+		923C276F247FEFFE00E1121F /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C276E247FEFFE00E1121F /* CameraViewController.m */; };
+		923C2772247FF01000E1121F /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C2771247FF01000E1121F /* MovieViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,12 @@
 		923C2761247FED3500E1121F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		923C2762247FED3500E1121F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		923C2769247FED4700E1121F /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = ReadMe.md; path = ../ReadMe.md; sourceTree = "<group>"; };
+		923C276A247FEFEC00E1121F /* AlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
+		923C276B247FEFEC00E1121F /* AlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
+		923C276D247FEFFE00E1121F /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		923C276E247FEFFE00E1121F /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		923C2770247FF01000E1121F /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		923C2771247FF01000E1121F /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +63,6 @@
 				614B90FE4251F45D760EF5C0 /* Pods-GPUImageDemo.debug.xcconfig */,
 				2E6BED92AE10DFF8A552A583 /* Pods-GPUImageDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,6 +99,12 @@
 				923C275E247FED3500E1121F /* LaunchScreen.storyboard */,
 				923C2761247FED3500E1121F /* Info.plist */,
 				923C2762247FED3500E1121F /* main.m */,
+				923C276A247FEFEC00E1121F /* AlbumViewController.h */,
+				923C276B247FEFEC00E1121F /* AlbumViewController.m */,
+				923C276D247FEFFE00E1121F /* CameraViewController.h */,
+				923C276E247FEFFE00E1121F /* CameraViewController.m */,
+				923C2770247FF01000E1121F /* MovieViewController.h */,
+				923C2771247FF01000E1121F /* MovieViewController.m */,
 			);
 			path = GPUImageDemo;
 			sourceTree = "<group>";
@@ -218,7 +232,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				923C2758247FED3200E1121F /* ViewController.m in Sources */,
+				923C276C247FEFEC00E1121F /* AlbumViewController.m in Sources */,
 				923C2752247FED3200E1121F /* AppDelegate.m in Sources */,
+				923C2772247FF01000E1121F /* MovieViewController.m in Sources */,
+				923C276F247FEFFE00E1121F /* CameraViewController.m in Sources */,
 				923C2763247FED3500E1121F /* main.m in Sources */,
 				923C2755247FED3200E1121F /* SceneDelegate.m in Sources */,
 			);
@@ -362,12 +379,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9PT5KD6V4;
 				INFOPLIST_FILE = GPUImageDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.GPUImageDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.GPUImageDemo2s;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -379,12 +398,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9PT5KD6V4;
 				INFOPLIST_FILE = GPUImageDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.GPUImageDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.GPUImageDemo2s;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
