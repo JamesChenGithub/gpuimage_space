@@ -7,8 +7,19 @@
 //
 
 #import "AlbumViewController.h"
+#import "GPUFilterCell.h"
 
-@interface AlbumViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AlbumViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource>
+
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
+@property (nonatomic, weak) IBOutlet UICollectionView *filterCollectionView;
+
+@property (nonatomic, weak) IBOutlet UILabel *cpuLable;
+@property (nonatomic, weak) IBOutlet UILabel *coreGraphLable;
+@property (nonatomic, weak) IBOutlet UILabel *gpuImageLable;
+
+
 
 @end
 
@@ -44,10 +55,23 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:^{}];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    self.imageView.image = image;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:^{}];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 20;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"GPUFilterCell";
+    GPUFilterCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    cell.filterName.text = [NSString stringWithFormat:@"Filter %ld",(long)indexPath.item];
+
+    return cell;
 }
 
 @end

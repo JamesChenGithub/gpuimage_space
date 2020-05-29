@@ -18,6 +18,8 @@
 		923C276C247FEFEC00E1121F /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C276B247FEFEC00E1121F /* AlbumViewController.m */; };
 		923C276F247FEFFE00E1121F /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C276E247FEFFE00E1121F /* CameraViewController.m */; };
 		923C2772247FF01000E1121F /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C2771247FF01000E1121F /* MovieViewController.m */; };
+		92DD4F3724813A6900B97F9A /* GPUFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD4F3624813A6900B97F9A /* GPUFilterCell.m */; };
+		92DD4F3924813A7600B97F9A /* GPUFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DD4F3824813A7600B97F9A /* GPUFilterCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		923C276E247FEFFE00E1121F /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		923C2770247FF01000E1121F /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		923C2771247FF01000E1121F /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		92DD4F3524813A6900B97F9A /* GPUFilterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUFilterCell.h; sourceTree = "<group>"; };
+		92DD4F3624813A6900B97F9A /* GPUFilterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPUFilterCell.m; sourceTree = "<group>"; };
+		92DD4F3824813A7600B97F9A /* GPUFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPUFilterCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +110,9 @@
 				923C276E247FEFFE00E1121F /* CameraViewController.m */,
 				923C2770247FF01000E1121F /* MovieViewController.h */,
 				923C2771247FF01000E1121F /* MovieViewController.m */,
+				92DD4F3524813A6900B97F9A /* GPUFilterCell.h */,
+				92DD4F3624813A6900B97F9A /* GPUFilterCell.m */,
+				92DD4F3824813A7600B97F9A /* GPUFilterCell.xib */,
 			);
 			path = GPUImageDemo;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DD4F3924813A7600B97F9A /* GPUFilterCell.xib in Resources */,
 				923C2760247FED3500E1121F /* LaunchScreen.storyboard in Resources */,
 				923C275D247FED3500E1121F /* Assets.xcassets in Resources */,
 				923C275B247FED3200E1121F /* Main.storyboard in Resources */,
@@ -235,6 +244,7 @@
 				923C276C247FEFEC00E1121F /* AlbumViewController.m in Sources */,
 				923C2752247FED3200E1121F /* AppDelegate.m in Sources */,
 				923C2772247FF01000E1121F /* MovieViewController.m in Sources */,
+				92DD4F3724813A6900B97F9A /* GPUFilterCell.m in Sources */,
 				923C276F247FEFFE00E1121F /* CameraViewController.m in Sources */,
 				923C2763247FED3500E1121F /* main.m in Sources */,
 				923C2755247FED3200E1121F /* SceneDelegate.m in Sources */,
