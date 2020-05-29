@@ -8,10 +8,16 @@
 
 #import "AlbumViewController.h"
 #import "GPUFilterCell.h"
+#import <GPUImage/GPUImage.h>
 
 @interface AlbumViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource>
+@property (nonatomic, strong) UIImage *sourceImage;
+@property (nonatomic, strong) GPUImageFilter *selectedFilter;
 
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UIImageView *cpuImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *coreImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *gpuImageView;
 
 @property (nonatomic, weak) IBOutlet UICollectionView *filterCollectionView;
 
@@ -32,12 +38,8 @@
 
 - (IBAction)onTakePhoto:(id)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    
     imagePickerController.delegate = self; //设置代理
-    imagePickerController.allowsEditing = YES;
     imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //图片来源
-    //相册
-    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:imagePickerController animated:YES completion:nil];
     
 }
@@ -56,6 +58,21 @@
     [picker dismissViewControllerAnimated:YES completion:^{}];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     self.imageView.image = image;
+    self.sourceImage = image;
+    //使用黑白素描滤镜
+    GPUImageSketchFilter *disFilter = [[GPUImageSketchFilter alloc] init];
+    //设置要渲染的区域
+    [disFilter forceProcessingAtSize:image.size];
+    [disFilter useNextFrameForImageCapture];
+    //获取数据源
+    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc]initWithImage:image];
+    //添加上滤镜
+    [stillImageSource addTarget:disFilter];
+    //开始渲染
+    [stillImageSource processImage];
+    //获取渲染后的图片
+    UIImage *newImage = [disFilter imageFromCurrentFramebuffer];
+    self.gpuImageView.image = newImage;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
